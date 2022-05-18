@@ -1,0 +1,49 @@
+{% extends "bootstrap/base.html" %}
+{% block styles %}
+{{super()}}
+<link rel="stylesheet" href="{{url_for('.static', filename='default.css')}}">
+<script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"
+        integrity="sha384-3LK/3kTpDE/Pkp8gTNp2gR/2gOiwQ6QaO7Td0zV76UFJVhqLl4Vl3KL1We6q6wR9"
+        crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+table, th, td {
+  border:1px solid black;
+}
+</style>
+{% endblock %}
+
+
+{% block content %}
+</nav>
+    <p style="margin-left: 2.5em;padding: 0 7em 2em;"></p>
+
+<div class="container">
+        <div class="w3-panel w3-green">
+            <h3>Success!</h3>
+            <p>Dein Hochladen war erfolgreich!</p>
+            <p>Dein Hochgeladenes bild gehört wahrscheinlich zur klasse: <b>{{predict}}</b></p>
+            <p>Nährwerttabelle</p>
+            <table>
+                <tr>
+                    <th>Kalorien</th>
+                    <th>Kohlenhydrate</th>
+                    <th>Fette</th>
+                    <th>Proteine</th>
+                </tr>
+                <tr>
+                    <td>{{calories}}</td>
+                    <td>{{carbs}}</td>
+                    <td>{{fat}}</td>
+                    <td>{{protein}}</td>
+                </tr>
+            </table>
+            <br>
+        </div>
+        <div class="w3-panel" align="center">
+            <p>Hochgelades Bild</p>
+            <img src="{{ img_path }}" width="50%" height="40%">
+        </div>
+</div>
+
+{% endblock %}
